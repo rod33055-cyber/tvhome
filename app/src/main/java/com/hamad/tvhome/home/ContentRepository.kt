@@ -2,6 +2,7 @@ package com.hamad.tvhome.home
 
 import android.util.Log
 import com.hamad.tvhome.tmdb.TmdbClient
+import com.hamad.tvhome.tmdb.TmdbItem
 import kotlinx.coroutines.CancellationException
 
 data class Provider(val tmdbId: Int, val name: String, val packageName: String)
@@ -21,7 +22,7 @@ class ContentRepository(private val tmdb: TmdbClient) {
 
     suspend fun hero(tab: Tab, region: String, installed: Set<String>): List<HeroItem> = safe {
         if (tab == Tab.Apps) {
-            emptyList()
+            emptyList<HeroItem>()
         } else {
             val img = "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&auto=format&fit=crop"
             val title1 = Title(
@@ -41,7 +42,7 @@ class ContentRepository(private val tmdb: TmdbClient) {
 
     suspend fun rows(tab: Tab, region: String, installed: Set<String>): List<ContentRow> = safe {
         if (tab == Tab.Apps) {
-            emptyList()
+            emptyList<ContentRow>()
         } else {
             val img = "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=780&auto=format&fit=crop"
             val item1 = Title(
