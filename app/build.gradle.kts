@@ -23,6 +23,7 @@ android {
         resourceConfigurations += setOf("en")
         buildConfigField("String", "INSTAGRAM_HANDLE", "\"${localProps.getProperty("INSTAGRAM_HANDLE", "")}\"")
         buildConfigField("String", "TMDB_READ_TOKEN", "\"${localProps.getProperty("TMDB_READ_TOKEN", "")}\"")
+        buildConfigField("String", "YOUTUBE_API_KEY", "\"${localProps.getProperty("YOUTUBE_API_KEY", "")}\"")
         // Lets parallel worktrees install side by side on one emulator: -PidSuffix=.cc
         providers.gradleProperty("idSuffix").orNull?.let { applicationIdSuffix = it }
     }
